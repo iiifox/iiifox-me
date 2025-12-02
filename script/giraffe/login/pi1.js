@@ -18,7 +18,7 @@
     'use strict';
 
     // 配置参数
-    const TOTP_API_URL = 'https://iiifox.me/totp';
+    const TOTP_API_URL = 'https://iiifox.me/api/totp';
 
     function isAllowedPath() {
         try {
