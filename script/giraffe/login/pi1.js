@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         长颈鹿pi1注入
 // @namespace    https://iiifox.me/
-// @version      1.1.0
+// @version      1.1.1
 // @description  狐狸登录页面注入pi1账号密码谷歌验证码
 // @author       iiifox
 // @match        http://116.62.161.34/weblogin.aspx
