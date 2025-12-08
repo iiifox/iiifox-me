@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         长颈鹿pi1注入
 // @namespace    https://iiifox.me/
-// @version      1.1.1
+// @version      1.1.2
 // @description  狐狸登录页面注入pi1账号密码谷歌验证码
 // @author       iiifox
 // @match        http://116.62.161.34/weblogin.aspx
 // @match        http://116.62.161.34/WebLogin.aspx
+// @match        http://116.62.161.34:8368/weblogin.aspx
+// @match        http://116.62.161.34:8368/WebLogin.aspx
 // @match        http://116.62.161.34:8369/weblogin.aspx
 // @match        http://116.62.161.34:8369/WebLogin.aspx
 // @grant        GM_setValue
@@ -27,7 +29,7 @@
             const currentHost = window.location.host;
             const currentPath = window.location.pathname.toLowerCase();
             return (
-                (currentHost === '116.62.161.34:8369' || currentHost === '116.62.161.34') &&
+                (currentHost === '116.62.161.34' || currentHost === '116.62.161.34:8368' || currentHost === '116.62.161.34:8369') &&
                 currentPath === '/weblogin.aspx'
             );
         } catch (e) {
