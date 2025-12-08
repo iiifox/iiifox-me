@@ -13,7 +13,7 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_xmlhttpRequest
 // @updateURL    https://iiifox.me/script/giraffe/login/pi1.js
-// @downloadURL  https://iiifox.me/assets/giraffe/login/pi1.js
+// @downloadURL  https://iiifox.me/script/giraffe/login/pi1.js
 // ==/UserScript==
 
 (function () {
