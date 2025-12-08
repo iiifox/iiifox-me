@@ -25,8 +25,10 @@
     function isAllowedPath() {
         try {
             const currentHost = window.location.host;
+            const currentPath = window.location.pathname.toLowerCase();
             return (
-                currentHost === '116.62.161.34:8369'
+                (currentHost === '116.62.161.34:8369' || currentHost === '116.62.161.34') &&
+                currentPath === '/weblogin.aspx'
             );
         } catch (e) {
             console.error('路径验证出错:', e);
