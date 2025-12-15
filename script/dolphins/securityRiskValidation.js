@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         长颈鹿过安全风险验证
+// @name         海豚过安全风险验证
 // @namespace    https://iiifox.me/
 // @version      1.0.0
 // @description  自动判断捕获、风险替换。传码（目前只支持小刀系）、qb破风险（避免自付暂时没写）
@@ -173,14 +173,15 @@
         function handleXhr(xhr) {
             const responseJSON = JSON.parse(xhr.responseText)
             const ret = responseJSON.ret;
-            // 捕获非长颈鹿包体验证码响应内容
+            console.log(new URL(window.location.href).searchParams.get('pf'));
+            // 捕获非海豚包体验证码响应内容
             if (isCaptureUrl()) {
                 if (ret === 2022) {
                     captureStorage.set(JSON.stringify(responseJSON));
-                    showToast('✅ 已捕获非长颈鹿包体验证码响应内容 (xhr)');
+                    showToast('✅ 已捕获非海豚包体验证码响应内容 (xhr)');
                 }
             } else {
-                // 将长颈鹿风险验证替换为捕获的响应内容
+                // 将海豚风险验证替换为捕获的响应内容
                 if (ret === 1138) {
                     const captured = captureStorage.get();
                     if (captured) {
@@ -214,10 +215,11 @@
                 try {
                     const json = JSON.parse(text);
                     const ret = json.ret
+                    console.log(new URL(window.location.href).searchParams.get('pf'));
                     if (isCaptureUrl()) {
                         if (ret === 2022) {
                             captureStorage.set(JSON.stringify(json));
-                            showToast('✅ 已捕获非长颈鹿包体验证码响应内容 (fetch)');
+                            showToast('✅ 已捕获非海豚包体验证码响应内容 (fetch)');
                         }
                     } else {
                         if (ret === 1138) {
@@ -271,7 +273,7 @@
 
         panel.innerHTML = `
             <div style="display:flex;justify-content:flex-start;align-items:center;margin-bottom:6px;" id="panelHeader">
-                <span style="color:#4CAF50;font-weight:bold; font-size:13px;">长颈鹿过安全风险验证(自动识别包体)</span>
+                <span style="color:#4CAF50;font-weight:bold; font-size:13px;">海豚过安全风险验证(自动识别包体)</span>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;" id="panelCaptureStatus">
                 <div style="display:flex;align-items:center;gap:6px;font-weight:bold;">
